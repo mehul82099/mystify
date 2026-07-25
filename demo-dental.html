@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stellar Dental Care | Modern Healthcare Clinic</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      background-color: #0b131f;
+      color: #f8fafc;
+    }
+    .demo-bar {
+      background: #070d17;
+      border-bottom: 1px solid #1e293b;
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+    .demo-bar a {
+      color: #38bdf8;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dental-hero {
+      padding: 100px 0 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .dental-hero h1 {
+      font-family: var(--font-title);
+      font-size: 3rem;
+      color: #ffffff;
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+    .appointment-box {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 30px;
+    }
+    .doctor-card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .doctor-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP DEMO RETURN BAR -->
+  <div class="demo-bar">
+    <a href="index.html#portfolio">
+      <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
+      Back to Mystify me Portfolio
+    </a>
+    <span style="color: #94a3b8;">LIVE DEMO: Stellar Dental Care Clinic</span>
+  </div>
+
+  <!-- HEADER -->
+  <header style="top: 38px; background: rgba(11, 19, 31, 0.9);">
+    <div class="nav-container">
+      <a href="#" class="logo" style="color: #38bdf8;">
+        <i data-lucide="heart-pulse"></i>
+        STELLAR<span>.DENTAL</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#booking">Book Appointment</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="#booking" class="btn btn-primary" style="background: #38bdf8; color: #000; border-color: #38bdf8;">
+          <i data-lucide="calendar" style="width: 14px; height: 14px; margin-right: 6px;"></i>
+          Book Visit
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="container dental-hero">
+    <div>
+      <span class="badge" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border-color: rgba(56, 189, 248, 0.2);">PAINLESS DENTAL CARE</span>
+      <h1>Your Smile Deserves World-Class Care</h1>
+      <p style="color: #94a3b8; font-size: 1rem; margin-bottom: 30px;">Certified specialists providing painless laser teeth whitening, implants, and emergency dental consultations in Jaipur, Rajasthan.</p>
+      <div style="display: flex; gap: 15px;">
+        <a href="#booking" class="btn btn-primary" style="background: #38bdf8; color: #000;">Schedule Consultation</a>
+        <a href="tel:+918209951190" class="btn btn-secondary">Call Helpline</a>
+      </div>
+    </div>
+
+    <div>
+      <img src="assets/demo-dental.jpg" alt="Dental Care Clinic Room" style="width: 100%; border-radius: 12px; border: 1px solid #1e293b;">
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="container" style="padding-top: 40px;">
+    <div class="section-header">
+      <h2>Specialized Dental Treatments</h2>
+      <p style="color: #94a3b8;">Equipped with high-precision 3D scan equipment and hygienic sterilization.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="glass-card" style="background: #0f172a;">
+        <div class="why-icon" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8;"><i data-lucide="sparkles"></i></div>
+        <h3>Teeth Whitening</h3>
+        <p style="color: #94a3b8;">1-hour laser whitening treatment for bright, stain-free confidence.</p>
+      </div>
+      <div class="glass-card" style="background: #0f172a;">
+        <div class="why-icon" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8;"><i data-lucide="shield"></i></div>
+        <h3>Dental Implants</h3>
+        <p style="color: #94a3b8;">Permanent, natural-looking tooth replacement with lifetime durability guarantee.</p>
+      </div>
+      <div class="glass-card" style="background: #0f172a;">
+        <div class="why-icon" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8;"><i data-lucide="smile"></i></div>
+        <h3>Invisible Aligners</h3>
+        <p style="color: #94a3b8;">Straighten teeth discreetly without bulky metal braces.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT BOOKING FORM -->
+  <section id="booking" class="container" style="padding-top: 40px;">
+    <div class="appointment-box">
+      <h3 style="font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 10px;">Book Your Patient Slot</h3>
+      <p style="color: #94a3b8; margin-bottom: 25px;">Select your preferred date & time. You will receive an instant WhatsApp confirmation.</p>
+
+      <form onsubmit="event.preventDefault(); alert('Appointment Reserved! Confirmation sent to your phone.');">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+          <div>
+            <label style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase;">Patient Name</label>
+            <input type="text" class="form-control" style="background: #070d17;" placeholder="e.g. Rahul Sharma" required>
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase;">Phone Number</label>
+            <input type="tel" class="form-control" style="background: #070d17;" placeholder="+91 9876543210" required>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+          <div>
+            <label style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase;">Preferred Treatment</label>
+            <select class="form-control" style="background: #070d17;">
+              <option>Teeth Whitening</option>
+              <option>Dental Implants</option>
+              <option>Invisible Aligners</option>
+              <option>General Checkup</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase;">Preferred Date</label>
+            <input type="date" class="form-control" style="background: #070d17;" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="background: #38bdf8; color: #000; width: 100%;">
+          Confirm WhatsApp Slot
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="margin-top: 80px; background: #070d17;">
+    <div class="container footer-container" style="padding: 0;">
+      <p>&copy; 2026 Stellar Dental Care. Created by Mystify me.</p>
+      <a href="index.html#portfolio" class="btn btn-secondary text-mono" style="padding: 6px 12px; font-size: 0.75rem;">← Back to Portfolio</a>
+    </div>
+  </footer>
+
+  <script>
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
+</body>
+</html>

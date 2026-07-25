@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexCRM | Modern AI Powered Lead Management</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .demo-bar {
+      background: #18181b;
+      border-bottom: 1px solid #27272a;
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+    .demo-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .demo-bar a:hover {
+      text-decoration: underline;
+    }
+    .saas-hero {
+      padding: 100px 0 60px;
+      text-align: center;
+    }
+    .saas-hero h1 {
+      font-family: var(--font-title);
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    .saas-dashboard-preview {
+      margin-top: 40px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    }
+    .pricing-card {
+      background: #0d0d11;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP DEMO RETURN BAR -->
+  <div class="demo-bar">
+    <a href="index.html#portfolio">
+      <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
+      Back to Mystify me Portfolio
+    </a>
+    <span style="color: var(--text-muted);">LIVE DEMO: ApexCRM SaaS Platform</span>
+  </div>
+
+  <!-- SAAS HEADER -->
+  <header style="top: 38px;">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <i data-lucide="zap"></i>
+        Apex<span>CRM</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="btn btn-primary" onclick="alert('Demo Action: Trial Signup Triggered!')">Get Started Free</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SAAS HERO -->
+  <section class="saas-hero container">
+    <span class="badge text-mono">AI LEAD AUTOMATION 2.0</span>
+    <h1>Close 3x More Deals With Intelligent Insights</h1>
+    <p style="margin: 0 auto 30px; max-width: 600px; color: var(--text-muted);">ApexCRM automatically captures leads from your website, scores intent, and alerts your sales team on WhatsApp instantly.</p>
+    <div style="display: flex; gap: 15px; justify-content: center;">
+      <button class="btn btn-primary" onclick="alert('Welcome to ApexCRM Demo!')">Start 14-Day Free Trial</button>
+      <button class="btn btn-secondary" onclick="alert('Playing Demo Video...')">Watch Product Tour</button>
+    </div>
+
+    <div class="saas-dashboard-preview">
+      <img src="assets/demo-saas.jpg" alt="ApexCRM Dashboard" style="width: 100%; display: block;">
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="container" style="padding-top: 40px;">
+    <div class="section-header">
+      <h2>Built for Modern Revenue Teams</h2>
+      <p>Everything you need to automate customer acquisition in one minimal dashboard.</p>
+    </div>
+    <div class="why-grid">
+      <div class="glass-card">
+        <div class="why-icon"><i data-lucide="pie-chart"></i></div>
+        <h3>Predictive Analytics</h3>
+        <p>AI algorithms forecast monthly deal closures based on past pipeline velocity.</p>
+      </div>
+      <div class="glass-card">
+        <div class="why-icon"><i data-lucide="message-square"></i></div>
+        <h3>Instant WhatsApp Alerts</h3>
+        <p>Receive immediate alerts on your phone whenever a high-intent prospect submits a lead form.</p>
+      </div>
+      <div class="glass-card">
+        <div class="why-icon"><i data-lucide="users"></i></div>
+        <h3>Team Pipeline Collaboration</h3>
+        <p>Assign leads automatically to available sales managers based on geographic region.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="container" style="padding-top: 40px;">
+    <div class="section-header">
+      <h2>Transparent Pricing</h2>
+      <p>Cancel or upgrade your plan anytime with a single click.</p>
+    </div>
+    <div class="services-grid">
+      <div class="pricing-card">
+        <span class="badge text-mono">STARTER</span>
+        <h3>Starter Plan</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">For solo founders & small teams.</p>
+        <div class="service-price">$29 <span>/ month</span></div>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: 20px;" onclick="alert('Selected Starter Plan!')">Start Free Trial</button>
+      </div>
+      <div class="pricing-card" style="border-color: #ffffff;">
+        <span class="badge text-mono" style="background: #ffffff; color: #000;">RECOMMENDED</span>
+        <h3>Pro Growth</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">For scaling sales operations.</p>
+        <div class="service-price">$79 <span>/ month</span></div>
+        <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="alert('Selected Pro Growth Plan!')">Start Free Trial</button>
+      </div>
+      <div class="pricing-card">
+        <span class="badge text-mono">ENTERPRISE</span>
+        <h3>Enterprise Custom</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Dedicated database & custom API access.</p>
+        <div class="service-price">$199 <span>/ month</span></div>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: 20px;" onclick="alert('Connecting to Sales...')">Contact Sales</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="margin-top: 80px;">
+    <div class="container footer-container" style="padding: 0;">
+      <p>&copy; 2026 ApexCRM Inc. Designed by Mystify me.</p>
+      <a href="index.html#portfolio" class="btn btn-secondary text-mono" style="padding: 6px 12px; font-size: 0.75rem;">← Back to Portfolio</a>
+    </div>
+  </footer>
+
+  <script>
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
+</body>
+</html>

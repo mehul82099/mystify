@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaThreads | Luxury Minimal Streetwear Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .demo-bar {
+      background: #09090b;
+      border-bottom: 1px solid #1f1f23;
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+    .demo-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .shop-hero {
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .product-card {
+      background: #0d0d11;
+      border: 1px solid #1f1f23;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+    .product-details {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cart-badge {
+      background: #ffffff;
+      color: #000000;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP DEMO RETURN BAR -->
+  <div class="demo-bar">
+    <a href="index.html#portfolio">
+      <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
+      Back to Mystify me Portfolio
+    </a>
+    <span style="color: var(--text-muted);">LIVE DEMO: NovaThreads Apparel Storefront</span>
+  </div>
+
+  <!-- STORE HEADER -->
+  <header style="top: 38px;">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        NOVATHREADS
+      </a>
+      <ul class="nav-links">
+        <li><a href="#new">New Arrivals</a></li>
+        <li><a href="#collection">Collection</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="btn btn-secondary" onclick="alert('Cart Items: ' + cartCount + ' items ready for UPI Checkout!')">
+          <i data-lucide="shopping-bag" style="width: 16px; height: 16px; margin-right: 6px;"></i>
+          Cart <span class="cart-badge" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- STORE HERO -->
+  <section class="shop-hero container">
+    <span class="badge text-mono">AUTUMN / WINTER 2026</span>
+    <h1 style="font-family: var(--font-title); font-size: 3.2rem; font-weight: 700; margin-bottom: 10px;">Obsidian Essentials Collection</h1>
+    <p style="color: var(--text-muted);">Heavyweight cotton, clean cuts, engineered for daily comfort.</p>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section id="collection" class="container" style="padding-top: 0;">
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=500&q=80" alt="Heavyweight Hoodie">
+        <div class="product-details">
+          <div>
+            <h4 style="font-family: var(--font-title); font-size: 1rem;">Heavyweight Oversized Hoodie</h4>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">450 GSM Organic Cotton</p>
+          </div>
+          <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: var(--font-mono); font-weight: 600;">₹3,499</span>
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;" onclick="addToCart()">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80" alt="Minimal Tee">
+        <div class="product-details">
+          <div>
+            <h4 style="font-family: var(--font-title); font-size: 1rem;">Obsidian Boxy Fit Tee</h4>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">280 GSM Matte Finished</p>
+          </div>
+          <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: var(--font-mono); font-weight: 600;">₹1,799</span>
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;" onclick="addToCart()">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=500&q=80" alt="Technical Jacket">
+        <div class="product-details">
+          <div>
+            <h4 style="font-family: var(--font-title); font-size: 1rem;">Minimalist Zip Jacket</h4>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">Water-resistant Nylon Shell</p>
+          </div>
+          <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: var(--font-mono); font-weight: 600;">₹5,999</span>
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;" onclick="addToCart()">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=500&q=80" alt="Cargo Trousers">
+        <div class="product-details">
+          <div>
+            <h4 style="font-family: var(--font-title); font-size: 1rem;">Relaxed Cargo Trousers</h4>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">Multiple Utility Pockets</p>
+          </div>
+          <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: var(--font-mono); font-weight: 600;">₹3,199</span>
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;" onclick="addToCart()">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKOUT DEMO SECTION -->
+  <section class="container" style="text-align: center; margin-top: 40px;">
+    <div class="glass-card" style="max-width: 500px; margin: 0 auto;">
+      <h3>UPI Payment & Order Demo</h3>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin: 10px 0 20px;">Fast 1-click checkout with Google Pay, PhonePe, Paytm, or Credit Card.</p>
+      <button class="btn btn-primary" style="width: 100%;" onclick="alert('Demo Checkout: Instant UPI Gateway Triggered successfully!')">Simulate Instant Checkout</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="margin-top: 80px;">
+    <div class="container footer-container" style="padding: 0;">
+      <p>&copy; 2026 NovaThreads Store. Powered by Mystify me.</p>
+      <a href="index.html#portfolio" class="btn btn-secondary text-mono" style="padding: 6px 12px; font-size: 0.75rem;">← Back to Portfolio</a>
+    </div>
+  </footer>
+
+  <script>
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+    let cartCount = 0;
+    function addToCart() {
+      cartCount++;
+      document.getElementById('cart-count').textContent = cartCount;
+      alert('Added to cart! Total items: ' + cartCount);
+    }
+  </script>
+</body>
+</html>
