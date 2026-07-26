@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!ctx || !canvas || frames.length === 0) return;
     
     let img = frames[frameIndex];
-    if (!img || !img.complete || img.naturalWidth === 0) {
+    if (!img || !img.complete || !img.naturalWidth) {
       for (let i = frameIndex; i >= 0; i--) {
         if (frames[i] && frames[i].complete && frames[i].naturalWidth > 0) {
           img = frames[i];
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     }
-    if (!img || !img.complete || img.naturalWidth === 0) {
+    if (!img || !img.complete || !img.naturalWidth) {
       for (let i = frameIndex; i < frames.length; i++) {
         if (frames[i] && frames[i].complete && frames[i].naturalWidth > 0) {
           img = frames[i];
@@ -297,11 +297,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    if (!img || !img.complete || img.naturalWidth === 0) return;
+    if (!img || !img.complete || !img.naturalWidth || !img.naturalHeight) return;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    const imgRatio = img.width / img.height;
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+    const imgRatio = w / h;
     const canvasRatio = canvas.width / canvas.height;
     let drawW, drawH, drawX, drawY;
 
