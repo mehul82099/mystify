@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      if (frames[currentFrameIndex]) renderCanvasFrame(currentFrameIndex);
+      renderCanvasFrame(currentFrameIndex);
     }
 
     const frameCount = 240;
@@ -263,10 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     frameSources.forEach((src, index) => {
       const img = new Image();
-      img.src = src;
       img.onload = () => {
-        if (index === 0) renderCanvasFrame(0);
+        if (index === 0 || currentFrameIndex === index) {
+          renderCanvasFrame(currentFrameIndex);
+        }
       };
+      img.src = src;
       frames.push(img);
     });
 
@@ -275,8 +277,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderCanvasFrame(frameIndex) {
-    if (!ctx || !canvas || !frames[frameIndex] || !frames[frameIndex].complete) return;
-    const img = frames[frameIndex];
+    if (!ctx || !canvas || frames.length === 0) return;
+    
+    let img = frames[frameIndex];
+    if (!img || !img.complete || img.naturalWidth === 0) {
+      for (let i = frameIndex; i >= 0; i--) {
+        if (frames[i] && frames[i].complete && frames[i].naturalWidth > 0) {
+          img = frames[i];
+          break;
+        }
+      }
+    }
+    if (!img || !img.complete || img.naturalWidth === 0) {
+      for (let i = frameIndex; i < frames.length; i++) {
+        if (frames[i] && frames[i].complete && frames[i].naturalWidth > 0) {
+          img = frames[i];
+          break;
+        }
+      }
+    }
+
+    if (!img || !img.complete || img.naturalWidth === 0) return;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     const imgRatio = img.width / img.height;
@@ -321,6 +343,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetFrame !== currentFrameIndex) {
         currentFrameIndex = targetFrame;
         renderCanvasFrame(currentFrameIndex);
+        if (heroImg && frameSources[currentFrameIndex]) {
+          heroImg.src = frameSources[currentFrameIndex];
+        }
       }
     }
 
