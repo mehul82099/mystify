@@ -307,16 +307,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvasRatio = canvas.width / canvas.height;
     let drawW, drawH, drawX, drawY;
 
+    // Use Contain-Fit Scaling so the entire subject and all 3D exploded layers fit 100% inside screen without cropping
     if (canvasRatio > imgRatio) {
-      drawW = canvas.width;
-      drawH = canvas.width / imgRatio;
-      drawX = 0;
+      drawH = canvas.height * 0.92;
+      drawW = drawH * imgRatio;
+      drawX = (canvas.width - drawW) / 2;
       drawY = (canvas.height - drawH) / 2;
     } else {
-      drawH = canvas.height;
-      drawW = canvas.height * imgRatio;
+      drawW = canvas.width * 0.92;
+      drawH = drawW / imgRatio;
       drawX = (canvas.width - drawW) / 2;
-      drawY = 0;
+      drawY = (canvas.height - drawH) / 2;
     }
 
     ctx.drawImage(img, drawX, drawY, drawW, drawH);

@@ -1074,7 +1074,7 @@ header, section, footer {
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
+  object-fit: contain;
   z-index: 1;
   filter: brightness(1.05) contrast(1.05);
 }
