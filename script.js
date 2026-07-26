@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 9. Vibe Coded Scroll Progress & HTML5 Canvas Frame Scrubbing Engine
   const canvas = document.getElementById('scrolly-canvas');
-  let ctx, frames = [], currentFrameIndex = 0;
+  let ctx, frames = [], frameSources = [], currentFrameIndex = 0;
 
   if (canvas) {
     ctx = canvas.getContext('2d');
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const frameCount = 240;
-    const frameSources = [];
+    frameSources = [];
     for (let i = 1; i <= frameCount; i++) {
       const numStr = String(i).padStart(3, '0');
       frameSources.push(`assets/ezgif-frame-${numStr}.jpg`);
