@@ -254,14 +254,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (frames[currentFrameIndex]) renderCanvasFrame(currentFrameIndex);
     }
 
-    const frameSources = [
-      'assets/sequence_01.jpg',
-      'assets/sequence_02.jpg',
-      'assets/sequence_03.jpg',
-      'assets/sequence_04.jpg',
-      'assets/hillstation-bg.jpg',
-      'assets/hillstation-sky.jpg'
-    ];
+    const frameCount = 240;
+    const frameSources = [];
+    for (let i = 1; i <= frameCount; i++) {
+      const numStr = String(i).padStart(3, '0');
+      frameSources.push(`assets/ezgif-frame-${numStr}.jpg`);
+    }
 
     frameSources.forEach((src, index) => {
       const img = new Image();
