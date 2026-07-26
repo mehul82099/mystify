@@ -322,8 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const scrollProgress = document.getElementById('scroll-progress');
   const scrollVal = document.getElementById('scroll-val');
-  const heroImg = document.querySelector('.hero-img');
-  const hillExpressTrain = document.getElementById('hill-express-train');
 
   function updateScrollEffects() {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -334,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollProgress.style.width = `${progress}%`;
     }
     if (scrollVal) {
-      scrollVal.textContent = `TRAIN ARRIVAL ${Math.round(progress)}%`;
+      scrollVal.textContent = `3D SCROLL ${Math.round(progress)}%`;
     }
 
     // HTML5 Canvas Frame Scrubbing on Scroll (Full Website 240-Frame Background)
@@ -344,12 +342,6 @@ document.addEventListener('DOMContentLoaded', () => {
         currentFrameIndex = targetFrame;
         renderCanvasFrame(currentFrameIndex);
       }
-    }
-
-    // Move Hill Station Express Train down track dynamically
-    if (hillExpressTrain) {
-      const trainTopPercent = (progress / 100) * 92;
-      hillExpressTrain.style.top = `${trainTopPercent}%`;
     }
 
     // Hero 3D depth camera scale on scroll
