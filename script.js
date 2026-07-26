@@ -337,15 +337,12 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollVal.textContent = `TRAIN ARRIVAL ${Math.round(progress)}%`;
     }
 
-    // HTML5 Canvas Frame Scrubbing on Scroll
+    // HTML5 Canvas Frame Scrubbing on Scroll (Full Website 240-Frame Background)
     if (frames.length > 0) {
       const targetFrame = Math.min(Math.floor((progress / 100) * frames.length), frames.length - 1);
       if (targetFrame !== currentFrameIndex) {
         currentFrameIndex = targetFrame;
         renderCanvasFrame(currentFrameIndex);
-        if (heroImg && frameSources[currentFrameIndex]) {
-          heroImg.src = frameSources[currentFrameIndex];
-        }
       }
     }
 
