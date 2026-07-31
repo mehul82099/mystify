@@ -248,8 +248,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 9. Vibe Coded Scroll Progress Engine
+  document.querySelectorAll('.scroll-badge').forEach(el => el.remove());
   const scrollProgress = document.getElementById('scroll-progress');
-  const scrollVal = document.getElementById('scroll-val');
 
   function updateScrollEffects() {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
