@@ -40,9 +40,11 @@ html {
 body {
   background-color: #000000 !important;
   background-image: 
-    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(168, 85, 247, 0.14), rgba(255, 255, 255, 0.03) 30%, transparent 70%),
-    radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-  background-size: 100% 100%, 28px 28px;
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(168, 85, 247, 0.18), rgba(255, 255, 255, 0.04) 30%, transparent 70%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 0.88) 100%),
+    url('assets/dark-bg.jpg');
+  background-size: 100% 100%, cover, cover;
+  background-position: center;
   background-attachment: fixed;
   color: var(--text-main);
   font-family: var(--font-body);
