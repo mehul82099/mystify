@@ -247,88 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. Vibe Coded Scroll Progress & HTML5 Canvas Frame Scrubbing Engine
-  const canvas = document.getElementById('scrolly-canvas');
-  let ctx, frames = [], frameSources = [], currentFrameIndex = 0;
-
-  if (canvas) {
-    ctx = canvas.getContext('2d');
-    
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      renderCanvasFrame(currentFrameIndex);
-    }
-
-    const frameCount = 240;
-    frameSources = [];
-    for (let i = 1; i <= frameCount; i++) {
-      const numStr = String(i).padStart(3, '0');
-      frameSources.push(`assets/ezgif-frame-${numStr}.jpg`);
-    }
-
-    frameSources.forEach((src, index) => {
-      const img = new Image();
-      img.onload = () => {
-        if (index === 0 || currentFrameIndex === index) {
-          renderCanvasFrame(currentFrameIndex);
-        }
-      };
-      img.src = src;
-      frames.push(img);
-    });
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-  }
-
-  function renderCanvasFrame(frameIndex) {
-    if (!ctx || !canvas || frames.length === 0) return;
-    
-    let img = frames[frameIndex];
-    if (!img || !img.complete || !img.naturalWidth) {
-      for (let i = frameIndex; i >= 0; i--) {
-        if (frames[i] && frames[i].complete && frames[i].naturalWidth > 0) {
-          img = frames[i];
-          break;
-        }
-      }
-    }
-    if (!img || !img.complete || !img.naturalWidth) {
-      for (let i = frameIndex; i < frames.length; i++) {
-        if (frames[i] && frames[i].complete && frames[i].naturalWidth > 0) {
-          img = frames[i];
-          break;
-        }
-      }
-    }
-
-    if (!img || !img.complete || !img.naturalWidth || !img.naturalHeight) return;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    const w = img.naturalWidth;
-    const h = img.naturalHeight;
-    const imgRatio = w / h;
-    const canvasRatio = canvas.width / canvas.height;
-    let drawW, drawH, drawX, drawY;
-
-    // Use Contain-Fit Scaling so the entire subject and all 3D exploded layers fit 100% inside screen without cropping
-    if (canvasRatio > imgRatio) {
-      drawH = canvas.height * 0.92;
-      drawW = drawH * imgRatio;
-      drawX = (canvas.width - drawW) / 2;
-      drawY = (canvas.height - drawH) / 2;
-    } else {
-      drawW = canvas.width * 0.92;
-      drawH = drawW / imgRatio;
-      drawX = (canvas.width - drawW) / 2;
-      drawY = (canvas.height - drawH) / 2;
-    }
-
-    ctx.drawImage(img, drawX, drawY, drawW, drawH);
-  }
-
+  // 9. Vibe Coded Scroll Progress Engine
   const scrollProgress = document.getElementById('scroll-progress');
   const scrollVal = document.getElementById('scroll-val');
 
@@ -341,16 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollProgress.style.width = `${progress}%`;
     }
     if (scrollVal) {
-      scrollVal.textContent = `3D SCROLL ${Math.round(progress)}%`;
-    }
-
-    // HTML5 Canvas Frame Scrubbing on Scroll (Full Website 240-Frame Background)
-    if (frames.length > 0) {
-      const targetFrame = Math.min(Math.floor((progress / 100) * frames.length), frames.length - 1);
-      if (targetFrame !== currentFrameIndex) {
-        currentFrameIndex = targetFrame;
-        renderCanvasFrame(currentFrameIndex);
-      }
+      scrollVal.textContent = `SCROLL ${Math.round(progress)}%`;
     }
 
     // Hero 3D depth camera scale on scroll

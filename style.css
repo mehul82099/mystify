@@ -1045,7 +1045,7 @@ footer {
 /* --- REAL PARALLAX HILL STATION & ANIMATED LOCOMOTIVE TRAIN --- */
 /* 3D Scrollytelling HTML5 Canvas Background Engine */
 html, body {
-  background-color: #050914 !important;
+  background-color: #000000 !important;
   color: var(--text-main);
   font-family: var(--font-body);
   overflow-x: hidden;
@@ -1055,32 +1055,6 @@ html, body {
 header, section, footer {
   position: relative;
   z-index: 10;
-}
-
-.parallax-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-#scrolly-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: contain;
-  z-index: 1;
-  filter: brightness(1.05) contrast(1.05);
-}
-
-.layer-mist {
-  display: none !important;
 }
 
 /* Translucent Glass Cards Floating Over 240-Frame Full-Screen Background */
