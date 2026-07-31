@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Interactive Cursor Spotlight Engine
+  window.addEventListener('mousemove', (e) => {
+    document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+    document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+  });
+
   // 1. Initialize Lucide Icons
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
